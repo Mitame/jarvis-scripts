@@ -134,7 +134,7 @@ typedCmd =
       /clear alias for (.*)/i
     ],
     "sentiment": [
-      /sa\s*(\d*)\s*(.*)/i
+      /sa\s+(\d+)\s+(.+)|sa\s+()(.+)/i
     ]
 
 

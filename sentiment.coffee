@@ -12,7 +12,7 @@ _ = require 'lomath'
 qsentiment = require(__dirname+'/../lib/sentiment.js')
 
 module.exports = (robot) ->
-  robot.respond /sa\s*(\d*)\s*(.*)/i, (msg) ->
+  robot.respond /sa\s+(\d+)\s+(.+)|sa\s+()(.+)/i, (msg) ->
     count = if msg.match[1] is '' then 10 else msg.match[1]
     term = msg.match[2]
     qsentiment(count, term).then (body) ->
