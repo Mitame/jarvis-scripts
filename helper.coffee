@@ -4,8 +4,8 @@
 _ = require 'lomath'
 
 # the command regex
-typedCmd = 
-  "fun": 
+typedCmd =
+  "fun":
     "chuck norris": [
       /(chuck norris)( me )?(.*)/i
     ]
@@ -136,8 +136,12 @@ typedCmd =
     "sentiment": [
       /sa\s+(\d+)\s+(.+)|sa\s+()(.+)/i
     ],
-    "howdoi":[
+    "stackoverflow":[
       /how do i (.*)/i
+    ],
+    "reload":[
+      /command count/i
+      /reload all scripts/i
     ]
 
 
@@ -153,7 +157,7 @@ findName = (robot, alias) ->
 # else return undefined
 userId = (robot, userName, msg) ->
   userName = _.trim userName.replace(/\@/g, '')
-  try 
+  try
     if userName.toLowerCase() is 'me' or userName is ''
       candidate = msg.message.user.name
     else
@@ -172,7 +176,7 @@ isAdmin = (msg) ->
   return _.includes admins, email
 
 
-module.exports = 
+module.exports =
   "typedCmd": typedCmd
   "userId": userId
   "isAdmin": isAdmin
