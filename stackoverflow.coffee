@@ -19,10 +19,8 @@ module.exports = (robot) ->
 				""
 			finally
 				""
-			console.log ids
 			context.answers.answers({filter: "!9YdnSMldD"}, (err, results) ->
 				answer = results.items[0]
-				console.log answer
 				user = answer.owner.display_name
 
 				answer_text = answer.body.replace(/<pre><code>|<\/code><\/pre>/ig, "```")
@@ -31,14 +29,9 @@ module.exports = (robot) ->
 				answer_split = answer_text.split("```")
 
 				for part in [0...answer_split.length] by 2
-					console.log part
-					console.log answer_split[part]
 					answer_split[part] = answer_split[part].replace(/\r?\n|\r/g,"\n>")
 
 				answer_text = answer_split.join("```")
-
-#				console.log answer.body
-#				console.log answer_text
 
 				message = "'#{user}' said: \n" + answer_text
 
