@@ -1,0 +1,6 @@
+{
+  "name": "jarvis-scripts",
+  "dependencies": {
+    "stackexchange": "^0.3.0"
+  }
+}
