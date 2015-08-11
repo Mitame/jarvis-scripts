@@ -135,6 +135,9 @@ typedCmd =
     ],
     "sentiment": [
       /sa\s+(\d+)\s+(.+)|sa\s+()(.+)/i
+    ],
+    "howdoi":[
+      /how do i (.*)/i
     ]
 
 
